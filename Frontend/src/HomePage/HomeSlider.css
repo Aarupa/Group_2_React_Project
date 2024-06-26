@@ -1,0 +1,73 @@
+.slider-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.slider-item {
+    perspective: 1000px;
+}
+
+.slide-content {
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: slide-in 1s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.text-content {
+    backface-visibility: hidden;
+}
+
+.text-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 1rem;
+    transform: translateZ(100px);
+}
+
+.image-content {
+    backface-visibility: hidden;
+}
+
+.slider-image {
+    max-width: 80%;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    transform: translateZ(50px) rotateY(10deg);
+    transition: transform 0.5s;
+}
+
+.slider-image:hover {
+    transform: translateZ(50px) rotateY(0deg);
+}
+
+.control-button {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.control-button:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) rotateY(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotateY(0);
+    }
+}
