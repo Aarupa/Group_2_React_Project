@@ -63,7 +63,7 @@ function DoctorOneData() {
         <h2 className="text-2xl font-bold mb-4">Related Doctors</h2>
         <div className="bg-gray-200 shadow-md rounded-lg overflow-hidden p-4">
           {filteredDoctors.map(doc => (
-            <Link key={doc._id} to={`/doctor/${doc._id}`} className="block mb-4 p-4 bg-white shadow-md rounded-lg flex items-center hover:bg-gray-100">
+            <Link key={doc._id} to={`/doctor/${doc._id}`} className="block mb-4 p-4 bg-white shadow-md rounded-lg items-center hover:bg-gray-100">
               <img
                 className="w-16 h-16 object-cover rounded-full mr-4"
                 src={doc.img}
