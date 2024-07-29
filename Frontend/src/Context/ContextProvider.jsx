@@ -1,10 +1,12 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState, } from 'react';
 import { ContextCreateApi } from './ContextApi';
 import { toast, Bounce } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 function ContextProvider({ children }) {
-    const url = "https://group-2-react-project.onrender.com";
+    const url = "http://localhost:3000/Hospital";
     const [slider, setSliderData] = useState([]);
     const [hospitalSlider, setHospitalSlider] = useState([]);
     const [name, setName] = useState(localStorage.getItem("name"));
