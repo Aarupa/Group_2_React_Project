@@ -21,6 +21,8 @@ function UserSlider() {
                 
             </div>
         </div>
+
+        
     );
 }
 
