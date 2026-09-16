@@ -6,7 +6,8 @@ import { toast, Bounce } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 function ContextProvider({ children }) {
-    const url = "http://localhost:3000/Hospital";
+
+    const url = "https://group-2-react-project-9p2x.onrender.com/Hospital";
     const [slider, setSliderData] = useState([]);
     const [hospitalSlider, setHospitalSlider] = useState([]);
     const [name, setName] = useState(localStorage.getItem("name"));
