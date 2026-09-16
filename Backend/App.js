@@ -9,10 +9,11 @@ import { errorMiddleware } from "./middlewares/error.js";
 import appointmentRouter from "./router/appointmentRouter.js"
 import bodyParser from "body-parser"
 import cors from "cors"
+import "dotenv/config"
 
 
 const app = express()
-const url = "mongodb+srv://nagendrayadav13938:bGpDM8dw7Vba0mhl@cluster0.2m4pjjo.mongodb.net/"
+const url = process.env.MONGO_URI
 mongoose.connect(url, {
     dbName: "Doctor_details"
 }).then((data) => {
@@ -25,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
     origin: true,
-    methods: ["GET", "POSt", "DELETE", "PUT"],
+    methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true
 }))
 app.use("/Hospital", messageRouter);
@@ -39,21 +40,3 @@ app.use(errorMiddleware)
 app.listen(3000, () => {
     console.log("Server is running on 3000 port very well")
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
